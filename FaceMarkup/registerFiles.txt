@@ -1,0 +1,190 @@
+#!/bin/totallyunknownshell
+
+#########################################################################################
+
+These are the steps from getting new subjects from Oxford to making them ready for annotation
+
+#########################################################################################
+
+## First step: do we know that the Oxford people have finished the last lot?
+
+## Setting up the images:
+
+# Note that /scratch/tmp gets emptied.
+
+setenv SRC_ANN /vol/vssp/assavid/people/bill/archive/repos/cvsspSoftware
+umask 007
+$SRC_ANN/FaceMarkup/scripts/preprocess1.py
+cd /scratch/tmp
+
+# Faces *should* end up in /scratch/tmp/probably-faces & ditto ears, but there will be mistakes.  So:
+
+##  Use nautilus to delete any face images in probably-ears to trash.
+#  check that trash bin is empty:
+dir /scratch/.Trash-13995/files/
+#   (Any bad image files will need to be moved somewhere else.)
+nautilus /scratch/tmp/probably-ears
+
+## Then we can move them:
+
+foreach f ( /scratch/.Trash-13995/files/*.jpg )
+  mv probably-ears/$f:t:r.wrl probably-faces/
+end
+mv /scratch/.Trash-13995/files/*.jpg probably-faces/
+
+
+## Ditto to move any ears from probably-faces
+nautilus /scratch/tmp/probably-faces
+
+foreach f ( /scratch/.Trash-13995/files/*.jpg )
+  mv probably-faces/$f:t:r.wrl probably-ears/
+end
+mv /scratch/.Trash-13995/files/*.jpg probably-ears/
+
+
+## Tidy up
+
+mv -n probably-ears/* /vol/vssp/facecap/Oxford/ears/images
+mv -n probably-faces/* /vol/vssp/facecap/Oxford/faces/images
+chgrp -Rf cvssppobi /vol/vssp/facecap/Oxford/faces/images
+rmdir probably-*
+\rm -rf [A-Z]*
+
+
+## Distribute data to annotaters
+
+pushd /vol/vssp/facecap/Oxford/faces/annotation
+$SRC_ANN/FaceMarkup/scripts/pull_annotations.sh
+$SRC_ANN/FaceMarkup/scripts/count.py > annotation_counts-`date +%F`.csv
+# 
+
+## ditto, as eeg3vg, setting up annotation tool:
+
+su eeg3vg
+cd ~eeg3vg/annotation/data/oxfall
+cut -d',' -f1 /vol/vssp/facecap/Oxford/faces/annotation/annotation_counts-`date +%F`.csv | sed 's/$/.wrl/' > ~/annotation/data/oxfall/oxfall.txt
+./distribute.py
+
+
+## back as me:
+
+vncviewer cvplwstest:1  # password as above
+# & check everyone is annotating the correct d/base
+# This typically means looking in the "start.m" script & checking that "oxfall" is not commented out but "twins" is.
+# If changes are needed in code window: ^C out of prog (if running); make changes; run 'start'  
+# Then quit from vncviewer, NOT from matlab.
+# If changes were made, restart the other 2 machines:
+vncviewer cvplwstest:2  
+vncviewer cvplwstest:3  
+
+## move zips to archive/zipfiles
+
+mv -i /vol/vssp/facecap/Oxford/upload/*.zip /vol/vssp/facecap/Oxford/archive/zipfiles
+
+#########################
+
+This is the end of the first processing stage.
+
+The information about who needs to annotate what is in annotation_counts-`date +%F`.csv, which is sent off to Oxford.  That will come back fromn Kasia as a docx with extra info merged in from their master database.  Paul knows how to merge this in to our own accumulation of these docx files.
+
+
+#########################
+
+# Then Oxford go off and do the annotation.
+
+# >>>>> Wait 'til Oxford has emailed batch as done. <<<<<
+
+# pull together & merge the landmarks
+# NB process_annotations.m contains folder directives that must be checked
+#    before running. Default paths are set up for pobi and twins and can easily
+#    be changed with a flag. For new projects, their paths will have to be
+#    added.
+~/src/cvsspSoftware/FaceMarkup/scripts/pull_annotations.sh
+(cd ~/src/cvsspSoftware/FaceMarkup/mains/ && matlab -nodesktop -r process_annotations)
+# answer 'y' to this question: "Fix annotations? (Y/n):"
+# Then, when fixing annotations, if you accidentally accept a faulty one:
+#      - find the printed file name. it ends with .lnd.
+#      - delete the .lnd file. KEEP the .raw file.
+#      - continue.
+
+#########################
+
+Registration
+
+#########################
+
+# The script runs on the whole database, as it's fairly quick.
+# So it can be rerun at any stage.
+
+rsh rollo or meriadoc
+
+# Currently this runs the 26-pt asymmetric version of Register.
+cd /vol/vssp/facecap/Oxford/faces
+/vol/vssp/assavid/people/bill/archive/repos/cvsspSoftware/FaceMarkup/scripts/registerall.py images/ annotation/manual registered/manual/
+
+# We also need to do symmetric registration - currently 14-pt only.
+/vol/vssp/assavid/people/bill/archive/repos/cvsspSoftware/FaceMarkup/scripts/registerall.py images/ annotation/manual registered/manual-sym14/ --symm
+# Currently no need to do 26-pt symmetric version.
+chmod -Rf 660 registered/manual-sym14 registered/manual annotation/manual annotation/manual-dev
+
+# Need to go through all the images manually.  But now we need to find out how to just go through the latest ones.
+xv registered/manual-sym14/*.jpg registered/manual/*.jpg
+# Check permissions & dates on a few of most recent files:
+ll -t registered/manual
+ll -t registered/manual-sym14
+
+## Need to get Oxford to learn to do this:
+# Merge new data into /vol/vssp/facecap/Oxford/meta/merged.xlsx
+# incorporating any available metadata
+# Save first sheet "merged" as  /vol/vssp/facecap/Oxford/faces/meta/merged.csv
+
+# Open Matlab on a server in /vol/vssp/facecap/Oxford/faces - see cvsspSoftware/FaceMarkup/annotate/matlab_data.png
+- run update_matfiles
+  - which is not in svn because each d/b has its own update_matfiles & it is too hard to merge them.
+
+
+
+
+
+
+#########################
+
+Next steps
+
+#########################
+
+- Move ~eeg3vg/annotation/data under Oxford/faces/annotation
+- Remove requirement to login as eeg3vg
+
+
+
+#########################
+
+When cvplwstest crashed or otherwise needs restart of vncserver
+
+#########################
+
+ssh eeg3vg@cvplwstest
+# first try to kill any running servers (will just fail if they're not running)
+vncserver -kill :1 # display 1
+vncserver -kill :2 # display 2
+vncserver -kill :3
+vncserver -geometry 1600x1400 # will start a vnc server with first available screen number
+vncserver -geometry 1280x800
+vncserver -geometry 1280x800
+logout
+
+# connect to each, here we connect to :1
+vncviewer cvplwstest:1
+# we get a terminal
+cd annotation
+matlabloop
+
+# now minimise the terminal window because people tend to close it and kill all sorts of stuff
+
+# in matlab type
+start
+# it should now ask for your name. if so, we're done. otherwise call 999
+
+
+

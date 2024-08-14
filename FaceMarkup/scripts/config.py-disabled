@@ -1,0 +1,27 @@
+
+# convenient shorthands for various programs, like listfiles.py
+known_folders = dict(
+	surrey    = '/vol/vssp/vtefm/user/RafaelTena/3DDatabase/Data3D/Database3D',
+	surreyreg = '/vol/vssp/vtefm/user/RafaelTena/3DDatabase/Data3D/RegisteredDatabase3D',
+	surreyin  = '/vol/vssp/vtefm/user/RafaelTena/3DDatabase/Data3D/all',	# non-existent
+	surreynew = '/vol/vssp/vtefm/user/RafaelTena/3DDatabase/Data3D/new',	# non-existent
+	uk    = '/vol/vssp/facecap/Oxford/faces',
+	ukreg = '/vol/vssp/facecap/Oxford/faces-registered',
+	ukin  = '/vol/vssp/facecap/Oxford/all',
+	uknew = '/vol/vssp/facecap/Oxford/new'
+)
+'''
+surrey, surreyreg, oxford, and oxfordreg folders contain all files
+		directly within them (.wrl, .jpg, and .raw/rgb)
+oxfordin has .wrl and .jpg files nested in subfolders
+oxfordraw folders contain .raw files directly within them
+'''
+
+# defaults are used when running python files without arguments. you can set
+# the defaults here.
+mydefault = 'uk'		# installs uk folders as default folders
+for k in known_folders.keys():
+	if k.startswith( mydefault ):
+		known_folders['def'+k[len(mydefault):]] = known_folders[k]
+
+
