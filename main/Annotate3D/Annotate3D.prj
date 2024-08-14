@@ -1,0 +1,309 @@
+<deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
+  <configuration build-checksum="373676790" file="/user/cvsspstf/wk0003/FaceMarkup/mains/app_annotate/Annotate3D.prj" location="/user/cvsspstf/wk0003/FaceMarkup/mains/app_annotate" name="Annotate3D" preferred-package-location="/user/cvsspstf/wk0003/FaceMarkup/mains/app_annotate/for_redistribution" preferred-package-type="package.type.install" target="target.ezdeploy.standalone" target-name="Application Compiler">
+    <param.appname>Annotate3D</param.appname>
+    <param.icon>${PROJECT_ROOT}/Annotate3D_resources/icon.ico</param.icon>
+    <param.icons>
+      <file>${PROJECT_ROOT}/Annotate3D_resources/icon_48.png</file>
+      <file>${PROJECT_ROOT}/Annotate3D_resources/icon_32.png</file>
+      <file>${PROJECT_ROOT}/Annotate3D_resources/icon_24.png</file>
+      <file>${PROJECT_ROOT}/Annotate3D_resources/icon_16.png</file>
+    </param.icons>
+    <param.version>1.01</param.version>
+    <param.authnamewatermark>WP Koppen</param.authnamewatermark>
+    <param.email>p.koppen@surrey.ac.uk</param.email>
+    <param.company>University of Surrey</param.company>
+    <param.summary>Mark points on 3D images.</param.summary>
+    <param.description />
+    <param.screenshot>${PROJECT_ROOT}/splash.png</param.screenshot>
+    <param.guid />
+    <param.net.saved.interface />
+    <param.installpath.string>/University_of_Surrey/Annotate3D/</param.installpath.string>
+    <param.installpath.combo>option.installpath.user</param.installpath.combo>
+    <param.logo>${PROJECT_ROOT}/installer_surrey_logo.png</param.logo>
+    <param.install.notes />
+    <param.intermediate>${PROJECT_ROOT}/for_testing</param.intermediate>
+    <param.files.only>${PROJECT_ROOT}/for_redistribution_files_only</param.files.only>
+    <param.output>${PROJECT_ROOT}/for_redistribution</param.output>
+    <param.enable.clean.build>false</param.enable.clean.build>
+    <param.user.defined.mcr.options />
+    <param.embed.ctf>true</param.embed.ctf>
+    <param.target.type>subtarget.standalone</param.target.type>
+    <param.support.packages />
+    <param.required.mcr.products>
+      <item>35000</item>
+      <item>35010</item>
+      <item>35001</item>
+    </param.required.mcr.products>
+    <param.web.mcr>true</param.web.mcr>
+    <param.package.mcr>false</param.package.mcr>
+    <param.no.mcr>false</param.no.mcr>
+    <param.web.mcr.name>MyAppInstaller_web</param.web.mcr.name>
+    <param.package.mcr.name>MyAppInstaller_mcr</param.package.mcr.name>
+    <param.no.mcr.name>MyAppInstaller_app</param.no.mcr.name>
+    <param.windows.command.prompt>false</param.windows.command.prompt>
+    <param.create.log>false</param.create.log>
+    <param.log.file />
+    <unset>
+      <param.description />
+      <param.guid />
+      <param.net.saved.interface />
+      <param.installpath.string />
+      <param.installpath.combo />
+      <param.enable.clean.build />
+      <param.user.defined.mcr.options />
+      <param.embed.ctf />
+      <param.target.type />
+      <param.support.packages />
+      <param.web.mcr />
+      <param.package.mcr />
+      <param.no.mcr />
+      <param.web.mcr.name />
+      <param.package.mcr.name />
+      <param.no.mcr.name />
+      <param.windows.command.prompt />
+      <param.create.log />
+      <param.log.file />
+    </unset>
+    <fileset.main>
+      <file>${PROJECT_ROOT}/app_annotate.m</file>
+    </fileset.main>
+    <fileset.resources>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Annotation/Annotation.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Annotation/as.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Annotation/convertto.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Annotation/copy.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Annotation/copyfrom.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Annotation/define.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Annotation/delta.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Annotation/extract.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Annotation/factory.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Annotation/fixlnddef.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Annotation/load.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Annotation/loadobj.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Annotation/minus.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Annotation/mle.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Annotation/print.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Annotation/private/icp.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Annotation/private/load_lm3.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Annotation/private/load_lnd.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Annotation/private/load_raw.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Annotation/private/save_lm3.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Annotation/private/save_lnd.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Annotation/private/save_raw.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Annotation/procrustes.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Annotation/reset.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Annotation/saveas.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Annotation/saveobj.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Annotation/scatter3.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Annotation/snaptosurface.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Annotation/transfer.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Annotation/transform.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Annotation/undefine.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@AnnotationUI/AnnotationUI.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@AnnotationUI/deletemarker.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@AnnotationUI/loadannotation.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@AnnotationUI/paint.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@AnnotationUI/pointat.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@AnnotationUI/putmarker.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@AnnotationUI/reset.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@AnnotationUI/saveannotation.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@AnnotationUI/selectat.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@AnnotationUI/selectnextmarker.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@AnnotationUI/selectpreviousmarker.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@FileAnnotationSequence/FileAnnotationSequence.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@FileAnnotationSequence/goto.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@FileAnnotationSequence/next.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@FileAnnotationSequence/previous.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@KeyboardContext/KeyboardContext.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@LandmarkDefinition/LandmarkDefinition.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@LandmarkDefinition/conversion.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@LandmarkDefinition/fromname.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@LandmarkDefinition/load.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@LandmarkDefinition/print.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@LandmarkDefinition/print_conversion.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@LandmarkDefinition/private/lx_perakis8.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@LandmarkDefinition/private/lx_ruiz14.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@LandmarkDefinition/private/lx_savran26.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@LandmarkDefinition/private/lx_tena26.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@LandmarkDefinition/save.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@LandmarkEncyclopedia/LandmarkEncyclopedia.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@LandmarkEncyclopedia/landmarkid2label.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@LandmarkEncyclopedia/landmarklabel2id.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/Mesh.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/addtexture.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/areas.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/bary2cart.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/barycenters.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/borders.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/cart2bary.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/clean.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/closestpoint.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/copy.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/defineBarycenters.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/defineHalfEdges.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/defineNormals.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/defineParameters.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/export_threejs.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/fillholes.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/filterfaces.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/filtervertices.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/findpeaks.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/hemisphere.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/load.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/loadobj.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/neighbourhood.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/normals.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/oppositevertex.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/oppositevertex_topo.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/parameterization.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/private/barybasis.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/private/borders.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/private/cleandata.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/private/components.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/private/curvature_C.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/private/curvature_H.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/private/curvature_K.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/private/curvature_SI.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/private/curvature_T.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/private/curvature_k1k2.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/private/edges.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/private/faces2textureindices.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/private/findloops.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/private/halfedges.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/private/labeldatatips.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/private/load_abs.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/private/load_bnt.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/private/load_obj.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/private/load_wrl.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/private/neighbourhood.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/private/rdiv2norm.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/private/save_json.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/private/save_wrl.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/private/subsample.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/private/surfaces.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/private/triangulation48.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/private/unwrap.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/qrot.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/resetAllDependents.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/resetBarycenters.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/resetHalfEdges.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/resetNormals.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/resetParameters.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/saveas.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/saveobj.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/smoothmatrix.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/surfaces.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/texturecomponents.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/trimesh.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/trisculpt.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/trisurf.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/unitball.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@Mesh/uv.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@MeshViewerContext/MeshViewerContext.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@RigidTransformation/RigidTransformation.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@RigidTransformation/decompose.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@RigidTransformation/fromcoordinatesystems.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@RigidTransformation/inverse.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@RigidTransformation/private/pmul.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@RigidTransformation/private/transformannotation.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@RigidTransformation/private/transformcoordinatesystem.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@RigidTransformation/private/transformcurvaturepoints.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@RigidTransformation/private/transformmesh.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@RigidTransformation/private/transformposneglines.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@RigidTransformation/private/transformrigidtransformation.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@RigidTransformation/private/vmul.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@RigidTransformation/transform.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@ThreeJS/Group.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@ThreeJS/Line.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@ThreeJS/LineBasicMaterial.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@ThreeJS/MarkerImage.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@ThreeJS/Mesh.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@ThreeJS/MeshBasicMaterial.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@ThreeJS/MeshGeometry.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@ThreeJS/MeshPhongMaterial.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@ThreeJS/PointCloud.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@ThreeJS/PointCloudMaterial.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@ThreeJS/Scene.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@ThreeJS/SpotLight.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@ThreeJS/Texture.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@ThreeJS/ThreeJS.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@ThreeJS/VertexGeometry.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@ThreeJS/clear.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@ThreeJS/importAnnotation.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@ThreeJS/importCoordinateSystem.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@ThreeJS/importCurvaturePoints.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@ThreeJS/importMesh.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@ThreeJS/importPosNegLines.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@ThreeJS/private/colortype.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@ThreeJS/private/compile2json.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@ThreeJS/private/updatestruct.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@ThreeJS/saveas.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/@ThreeJS/setDefaultMarker.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/AbstractViewerContext.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/EvtPointAtMesh.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/classes/Singleton.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/external/@boundary/boundary.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/external/@boundary/delete.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/external/@boundary/get.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/external/@boundary/intersect.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/external/@boundary/ishandle.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/external/@boundary/private/format_param_list.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/external/@boundary/private/mask_last_error.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/external/@boundary/private/row_format.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/external/@boundary/set.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/util/cdiv2norm.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/util/clipuv.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/util/iscolorspec.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/util/islinespec.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/util/listfiles.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/util/noop.m</file>
+      <file>/user/cvsspstf/wk0003/FaceMarkup/util/pdist_subscripts.m</file>
+    </fileset.resources>
+    <fileset.package />
+    <build-deliverables>
+      <file location="${PROJECT_ROOT}/for_testing" name="readme.txt" optional="true">/user/cvsspstf/wk0003/FaceMarkup/mains/app_annotate/for_testing/readme.txt</file>
+      <file location="${PROJECT_ROOT}/for_testing" name="run_Annotate3D.sh" optional="false">/user/cvsspstf/wk0003/FaceMarkup/mains/app_annotate/for_testing/run_Annotate3D.sh</file>
+      <file location="${PROJECT_ROOT}/for_testing" name="splash.png" optional="false">/user/cvsspstf/wk0003/FaceMarkup/mains/app_annotate/for_testing/splash.png</file>
+      <file location="${PROJECT_ROOT}/for_testing" name="Annotate3D" optional="false">/user/cvsspstf/wk0003/FaceMarkup/mains/app_annotate/for_testing/Annotate3D</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>/opt/MWmatlabR2015a</root>
+      <toolboxes>
+        <toolbox name="fixedpoint" />
+        <toolbox name="embeddedcoder" />
+        <toolbox name="matlabcoder" />
+      </toolboxes>
+      <toolbox>
+        <fixedpoint>
+          <enabled>true</enabled>
+        </fixedpoint>
+      </toolbox>
+      <toolbox>
+        <embeddedcoder>
+          <enabled>true</enabled>
+        </embeddedcoder>
+      </toolbox>
+      <toolbox>
+        <matlabcoder>
+          <enabled>true</enabled>
+        </matlabcoder>
+      </toolbox>
+    </matlab>
+    <platform>
+      <unix>true</unix>
+      <mac>false</mac>
+      <windows>false</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>true</linux>
+      <solaris>false</solaris>
+      <osver>3.2.0-101-generic</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>glnxa64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>
